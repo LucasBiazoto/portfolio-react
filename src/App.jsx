@@ -1,417 +1,177 @@
-import "./App.css";
-import { useState } from "react";
-
-import heroImg from "./assets/lucasgit.png";
-
-import dashboardImg from "./assets/clinica-dashboard.png";
-import loginImg from "./assets/clinica-login.png";
-import financeiroImg from "./assets/clinica-financeiro.png";
-import agendaImg from "./assets/clinica-agenda.png";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import './App.css';
 
 function App() {
+  const { t, i18n } = useTranslation();
 
-  const [language, setLanguage] = useState("en");
-
-  const translations = {
-
-    en: {
-      about: "About",
-      projects: "Projects",
-      technologies: "Technologies",
-      contact: "Contact",
-
-      hello: "Hello, I'm",
-
-      description:
-        "Developing modern web systems with APIs, authentication, dashboards, scalable databases and automations.",
-
-      viewProjects: "View Projects",
-
-      aboutTitle: "About Me",
-
-      aboutText1:
-        "Professional with more than 12 years of experience in the banking sector, investments, customer service and financial products.",
-
-      aboutText2:
-        "Currently focused on Full Stack Development using Python, Django, PostgreSQL, JavaScript and React.",
-
-      technologiesTitle: "Technologies",
-
-      projectsTitle: "Projects",
-
-      project1:
-        "Administrative dashboard for clinic management with metrics and indicators.",
-
-      project2:
-        "Authentication system with secure login and user management.",
-
-      project3:
-        "Integrated financial control system with payments and reports.",
-
-      project4:
-        "Smart scheduling system with confirmations and automations.",
-
-      contactTitle: "Contact",
-
-      linkedin: "View LinkedIn",
-
-      whatsapp: "Talk on WhatsApp",
-    },
-
-    pt: {
-      about: "Sobre",
-      projects: "Projetos",
-      technologies: "Tecnologias",
-      contact: "Contato",
-
-      hello: "Olá, eu sou",
-
-      description:
-        "Desenvolvendo sistemas web modernos com APIs, autenticação, dashboards administrativos, banco de dados escaláveis e automações.",
-
-      viewProjects: "Ver Projetos",
-
-      aboutTitle: "Sobre Mim",
-
-      aboutText1:
-        "Profissional com mais de 12 anos de experiência no mercado bancário, investimentos, atendimento ao cliente e produtos financeiros.",
-
-      aboutText2:
-        "Atualmente focado em Desenvolvimento Full Stack utilizando Python, Django, PostgreSQL, JavaScript e React.",
-
-      technologiesTitle: "Tecnologias",
-
-      projectsTitle: "Projetos",
-
-      project1:
-        "Dashboard administrativo para gestão clínica com métricas e indicadores.",
-
-      project2:
-        "Sistema de autenticação com login seguro e gerenciamento de usuários.",
-
-      project3:
-        "Sistema integrado de controle financeiro com pagamentos e relatórios.",
-
-      project4:
-        "Sistema inteligente de agendamento com confirmações e automações.",
-
-      contactTitle: "Contato",
-
-      linkedin: "Ver LinkedIn",
-
-      whatsapp: "Falar no WhatsApp",
-    },
-
-    es: {
-      about: "Sobre",
-      projects: "Proyectos",
-      technologies: "Tecnologías",
-      contact: "Contacto",
-
-      hello: "Hola, soy",
-
-      description:
-        "Desarrollando sistemas web modernos con APIs, autenticación, dashboards, bases de datos escalables y automatizaciones.",
-
-      viewProjects: "Ver Proyectos",
-
-      aboutTitle: "Sobre Mí",
-
-      aboutText1:
-        "Profesional con más de 12 años de experiencia en el sector bancario, inversiones, atención al cliente y productos financieros.",
-
-      aboutText2:
-        "Actualmente enfocado en Desarrollo Full Stack usando Python, Django, PostgreSQL, JavaScript y React.",
-
-      technologiesTitle: "Tecnologías",
-
-      projectsTitle: "Proyectos",
-
-      project1:
-        "Dashboard administrativo para gestión clínica con métricas e indicadores.",
-
-      project2:
-        "Sistema de autenticación con login seguro y gestión de usuarios.",
-
-      project3:
-        "Sistema integrado de control financiero con pagos e informes.",
-
-      project4:
-        "Sistema inteligente de programación con confirmaciones y automatizaciones.",
-
-      contactTitle: "Contacto",
-
-      linkedin: "Ver LinkedIn",
-
-      whatsapp: "Hablar por WhatsApp",
-    },
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
-  const t = translations[language];
-
   return (
-    <div className="app">
-
-      {/* HEADER */}
-
-      <header className="header">
-
-        <div className="logo">
-          Lucas.dev
-        </div>
-
-        <div className="language-switch">
-
-          <button onClick={() => setLanguage("en")}>
+    <div className="portfolio-container">
+      {/* HEADER / NAVBAR */}
+      <header className="navbar">
+        <div className="logo">Lucas.dev</div>
+        
+        <div className="language-selector">
+          <button 
+            className={i18n.language === 'en' ? 'active-lang' : ''} 
+            onClick={() => changeLanguage('en')}
+          >
             EN
           </button>
-
-          <button onClick={() => setLanguage("pt")}>
+          <button 
+            className={i18n.language === 'pt' ? 'active-lang' : ''} 
+            onClick={() => changeLanguage('pt')}
+          >
             PT
           </button>
-
-          <button onClick={() => setLanguage("es")}>
+          <button 
+            className={i18n.language === 'es' ? 'active-lang' : ''} 
+            onClick={() => changeLanguage('es')}
+          >
             ES
           </button>
-
         </div>
 
-        <nav>
-          <a href="#sobre">{t.about}</a>
-          <a href="#projetos">{t.projects}</a>
-          <a href="#tecnologias">{t.technologies}</a>
-          <a href="#contato">{t.contact}</a>
+        <nav className="nav-links">
+          <a href="#about">{t('nav.about')}</a>
+          <a href="#projects">{t('nav.projects')}</a>
+          <a href="#technologies">{t('nav.technologies')}</a>
+          <a href="#contact">{t('nav.contact')}</a>
         </nav>
-
       </header>
 
-      {/* HERO */}
-
+      {/* HERO SECTION COM FOTO DO GITHUB */}
       <section className="hero">
-
-        <div className="hero-text">
-
-          <p className="hello">
-            {t.hello}
-          </p>
-
-          <h1>
-            Lucas <br />
-            Biazoto
-          </h1>
-
-          <h2>
-            Full Stack Developer <br />
-            | Python • Django • PostgreSQL
-          </h2>
-
-          <p className="description">
-            {t.description}
-          </p>
-
-          <div className="buttons">
-
-            <a href="#projetos" className="btn-primary">
-              {t.viewProjects}
-            </a>
-
-            <a
-              href="https://github.com/LucasBiazoto"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-secondary"
-            >
-              GitHub
-            </a>
-
+        <div className="hero-container">
+          <div className="hero-content">
+            <p className="greeting">{t('hero.greeting')}</p>
+            <h1>{t('hero.name')}</h1>
+            <h2>{t('hero.role')}</h2>
+            <p className="description">{t('hero.description')}</p>
+            <div className="hero-buttons">
+              <a href="#projects" className="btn primary">{t('hero.btn_projects')}</a>
+              <a href="https://github.com/LucasBiazoto" target="_blank" rel="noreferrer" className="btn secondary">
+                {t('hero.btn_github')}
+              </a>
+            </div>
           </div>
-
+          
+          <div className="hero-image-wrapper">
+            <img 
+              src="https://github.com/LucasBiazoto.png" 
+              alt="Lucas Biazoto" 
+              className="hero-profile-img" 
+            />
+          </div>
         </div>
-
-        <div className="hero-image">
-          <img src={heroImg} alt="Lucas Biazoto" />
-        </div>
-
       </section>
 
-      {/* ABOUT */}
-
-      <section id="sobre" className="section">
-
-        <h2 className="section-title">
-          {t.aboutTitle}
-        </h2>
-
-        <div className="about-content">
-
-          <p>{t.aboutText1}</p>
-
-          <p>{t.aboutText2}</p>
-
+      {/* SOBRE MIM */}
+      <section id="about" className="section">
+        <h2>{t('about.title')}</h2>
+        <div className="about-card">
+          <p>{t('about.p1')}</p>
+          <p>{t('about.p2')}</p>
+          <p>{t('about.p3')}</p>
         </div>
-
       </section>
 
-      {/* TECHNOLOGIES */}
-
-      <section id="tecnologias" className="section">
-
-        <h2 className="section-title">
-          {t.technologiesTitle}
-        </h2>
-
+      {/* TECNOLOGIAS */}
+      <section id="technologies" className="section">
+        <h2>{t('tech.title')}</h2>
         <div className="tech-grid">
-
-          <div className="tech-card">Python</div>
-          <div className="tech-card">Django</div>
-          <div className="tech-card">PostgreSQL</div>
-          <div className="tech-card">React</div>
-          <div className="tech-card">JavaScript</div>
-          <div className="tech-card">HTML5</div>
-          <div className="tech-card">CSS3</div>
-          <div className="tech-card">GitHub</div>
-
+          <span className="tech-badge">Python</span>
+          <span className="tech-badge">Django</span>
+          <span className="tech-badge">PostgreSQL</span>
+          <span className="tech-badge">JavaScript</span>
+          <span className="tech-badge">React</span>
+          <span className="tech-badge">HTML5 & CSS3</span>
+          <span className="tech-badge">Git & GitHub</span>
         </div>
-
       </section>
 
-      {/* PROJECTS */}
-
-      <section id="projetos" className="section">
-
-        <h2 className="section-title">
-          {t.projectsTitle}
-        </h2>
-
+      {/* PROJETOS */}
+      <section id="projects" className="section">
+        <h2>{t('projects.title')}</h2>
         <div className="projects-grid">
-
+          
           <div className="project-card">
-
-            <img src={dashboardImg} alt="dashboard" />
-
-            <div className="project-content">
-
-              <h3>Dashboard</h3>
-
-              <p>{t.project1}</p>
-
+            <h3>{t('projects.clinic_title')}</h3>
+            <p>{t('projects.clinic_desc')}</p>
+            <div className="card-tags">
+              <span>Python</span>
+              <span>Django</span>
+              <span>PostgreSQL</span>
             </div>
-
+            <div className="card-links">
+              <a href="https://github.com/LucasBiazoto/clinica-system" target="_blank" rel="noreferrer" className="btn-sm">
+                {t('projects.btn_code')}
+              </a>
+            </div>
           </div>
 
           <div className="project-card">
-
-            <img src={loginImg} alt="login" />
-
-            <div className="project-content">
-
-              <h3>Authentication</h3>
-
-              <p>{t.project2}</p>
-
+            <h3>{t('projects.time_title')}</h3>
+            <p>{t('projects.time_desc')}</p>
+            <div className="card-tags">
+              <span>Python</span>
+              <span>Django</span>
+              <span>PDF Engine</span>
             </div>
-
-          </div>
-
-          <div className="project-card">
-
-            <img src={financeiroImg} alt="financeiro" />
-
-            <div className="project-content">
-
-              <h3>Finance</h3>
-
-              <p>{t.project3}</p>
-
+            <div className="card-links">
+              <a href="https://github.com/LucasBiazoto/time-tracking-system" target="_blank" rel="noreferrer" className="btn-sm">
+                {t('projects.btn_code')}
+              </a>
             </div>
-
-          </div>
-
-          <div className="project-card">
-
-            <img src={agendaImg} alt="agenda" />
-
-            <div className="project-content">
-
-              <h3>Scheduling</h3>
-
-              <p>{t.project4}</p>
-
-            </div>
-
           </div>
 
         </div>
-
       </section>
 
-      {/* CONTACT */}
-
-      <section id="contato" className="section">
-
-        <h2 className="section-title">
-          {t.contactTitle}
-        </h2>
-
-        <div className="contact-container">
-
-          <div className="contact-card">
-
-            <h3>📩 E-mail</h3>
-
-            <a href="mailto:lucasmoreirabiazoto@gmail.com">
-              lucasmoreirabiazoto@gmail.com
-            </a>
-
-          </div>
-
-          <div className="contact-card">
-
-            <h3>💼 LinkedIn</h3>
-
-            <a
-              href="https://www.linkedin.com/in/lucas-biazoto-c-pro-i-80373774/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t.linkedin}
-            </a>
-
-          </div>
-
-          <div className="contact-card">
-
-            <h3>💻 GitHub</h3>
-
-            <a
-              href="https://github.com/LucasBiazoto"
-              target="_blank"
-              rel="noreferrer"
-            >
-              github.com/LucasBiazoto
-            </a>
-
-          </div>
-
-          <div className="contact-card">
-
-            <h3>📱 WhatsApp</h3>
-
-            <a
-              href="https://wa.me/5511984681343"
-              target="_blank"
-              rel="noreferrer"
-              className="whatsapp-btn"
-            >
-              {t.whatsapp}
-            </a>
-
-          </div>
-
+      {/* CONTATO COM ÍCONES */}
+      <section id="contact" className="section">
+        <h2>{t('contact.title')}</h2>
+        <div className="contact-links">
+          <a href="mailto:lucasmoreirabiazoto@gmail.com" className="contact-btn">
+            <FaEnvelope className="contact-icon email-icon" />
+            <span>{t('contact.email')}</span>
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/lucas-biazoto-c-pro-i-80373774/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="contact-btn"
+          >
+            <FaLinkedin className="contact-icon linkedin-icon" />
+            <span>{t('contact.linkedin')}</span>
+          </a>
+          <a 
+            href="https://github.com/LucasBiazoto" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="contact-btn"
+          >
+            <FaGithub className="contact-icon github-icon" />
+            <span>{t('contact.github')}</span>
+          </a>
         </div>
-
       </section>
 
+      {/* BOTÃO FLUTUANTE FIXO DO WHATSAPP */}
+      <a 
+        href="https://wa.me/5511984681343" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="whatsapp-float"
+        aria-label="Falar no WhatsApp"
+      >
+        <FaWhatsapp />
+      </a>
     </div>
   );
 }

@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "technologies": "Tecnologías",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Lucas Biazoto",
+    "role": "Desarrollador Full Stack & Backend | Python • Django • PostgreSQL",
+    "description": "Más de 12 años de experiencia en el mercado financiero combinados con ingeniería de software para desarrollar aplicaciones web escalables y sistemas automatizados.",
+    "btn_projects": "Ver Proyectos",
+    "btn_github": "Perfil de GitHub"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "p1": "Ingeniero de Software con una sólida trayectoria de 12 años en instituciones financieras líderes (Santander, Itaú, Nubank).",
+    "p2": "Especializado en operaciones de crédito, análisis de inversiones y cumplimiento normativo. Graduado del programa Full Stack & IA de Infinity School.",
+    "p3": "Mi diferencial es combinar una profunda lógica de negocios con código limpio y arquitectura escalable."
+  },
+  "tech": {
+    "title": "Tecnologías & Habilidades"
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "clinic_title": "Sistema de Gestión Clínica",
+    "clinic_desc": "Aplicación integral para clínicas con gestión de citas, historial médico e indicadores financieros.",
+    "time_title": "Sistema de Control de Horarios",
+    "time_desc": "Control de asistencia y horas de trabajo en Django con generación e impresión de informes mensuales en PDF.",
+    "btn_demo": "Ver Demo",
+    "btn_code": "Código Fuente"
+  },
+  "contact": {
+    "title": "Contacto",
+    "email": "Correo",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp"
+  }
+}

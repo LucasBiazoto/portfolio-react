@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Lucas Biazoto",
+    "role": "Full Stack & Backend Developer | Python • Django • PostgreSQL",
+    "description": "12+ years of financial market experience combined with modern software engineering to build scalable web applications, REST APIs, and automated systems.",
+    "btn_projects": "View Projects",
+    "btn_github": "GitHub Profile"
+  },
+  "about": {
+    "title": "About Me",
+    "p1": "Software Engineer and Tech Enthusiast with a solid 12-year background in major financial institutions (Santander, Itaú, Nubank).",
+    "p2": "Specialized in credit operations, investment analysis, and financial compliance. Recently completed the International Full Stack Programming & AI program at Infinity School.",
+    "p3": "My core strength lies in combining deep business logic with clean, scalable code."
+  },
+  "tech": {
+    "title": "Technologies & Stack"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "clinic_title": "Enterprise Clinic Management System",
+    "clinic_desc": "Full healthcare management application featuring scheduling engines, medical record tracking, and financial dashboards.",
+    "time_title": "Time Tracking System",
+    "time_desc": "Employee attendance and daily working hours tracker built with Django, featuring automated PDF monthly reports.",
+    "btn_demo": "Live Demo",
+    "btn_code": "Source Code"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp"
+  }
+}

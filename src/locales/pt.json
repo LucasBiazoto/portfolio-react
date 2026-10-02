@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "technologies": "Tecnologias",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Lucas Biazoto",
+    "role": "Desenvolvedor Full Stack & Backend | Python • Django • PostgreSQL",
+    "description": "Especialista em desenvolvimento de aplicações web escaláveis, REST APIs e arquitetura de software, combinando competências técnicas avançadas com visão estratégica de negócios.",
+    "btn_projects": "Ver Projetos",
+    "btn_github": "Perfil no GitHub"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "p1": "Desenvolvedor Full Stack focado na criação de sistemas robustos e arquiteturas eficientes utilizando Python, Django, PostgreSQL e React.",
+    "p2": "Formado em Desenvolvimento Full Stack & IA pela Infinity School, atuo na construção de APIs RESTful, modelagem de dados e automação de processos complexos.",
+    "p3": "Adicionalmente, possuo bagagem de 12 anos no mercado financeiro, o que traz uma vantagem no entendimento imediato de regras de negócio complexas, segurança de dados e compliance."
+  },
+  "tech": {
+    "title": "Tecnologias & Competências"
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "clinic_title": "Sistema de Gestão Clínica Integrado",
+    "clinic_desc": "Aplicação completa para clínicas com motor de agendamentos, prontuário eletrônico e painel de indicadores financeiros.",
+    "time_title": "Sistema de Ponto Eletrônico (Time Tracking)",
+    "time_desc": "Gestão de jornada de trabalho desenvolvida em Django com relatórios mensais exportáveis em PDF.",
+    "btn_demo": "Ver Demo",
+    "btn_code": "Código Fonte"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "email": "E-mail",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp"
+  }
+}
