@@ -133,7 +133,7 @@ function App() {
         </div>
       </section>
 
-      {/* CONTATO COM ÍCONES */}
+      {/* CONTATO COM E-MAIL CORRIGIDO */}
       <section id="contact" className="section">
         <h2>{t('contact.title')}</h2>
         <div className="contact-links">
